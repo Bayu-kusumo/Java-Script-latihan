@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nama siswa kelas 12</h1>
+    <button type="button" id="check">Check</button>
+    <button type="button" id="cancel">Cancel</button>
+    <p id="name"></p>    
+</body>
+</html>
+
+<script>
+    const namelist = ["bayu", "candra", "deni", "kevin"];
+    let text = '';
+
+    document.getElementById("check").onclick = function(){
+        text = ''; // Clear the previous content
+        for (let i = 0; i < namelist.length; i++){
+            text += namelist[i] + "<br>";
+        }
+        document.getElementById("name").innerHTML = text;
+    };
+
+    document.getElementById("cancel").onclick = function(){
+        document.getElementById("name").innerHTML = ""; // Clear the content
+    };
+</script>

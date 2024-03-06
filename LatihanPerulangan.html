@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="refresh">Buka List</button>
+    <br>
+    <br>
+    <p id="listname"></p>
+    <br>
+    <label for="">Input: </label>
+    <input type="text" id="addname">
+    <button type="button" id="add">Add</button>
+    <br>
+    <label for="">Cari: </label>
+    <input type="text" id="cari">
+    <button type="button" id="search">Cari</button>
+    <br>
+    <label for="">Cari Letak</label>
+    <input type="text" id="letak">
+    <button type="button" id="lokasi">Cari Letak</button>
+
+</body>
+</html>
+<script>
+    list=["jeruk", "nanas", "nangka", 'apel'];
+    document.getElementById("refresh").onclick = function(){
+        showlist(list);
+    }
+
+    function showlist(list){
+        text = '';
+        for (let i = 0; i < list.length; i ++){
+            text += list[i] + ",";
+        }
+        console.log(text);
+    }
+
+    document.getElementById("add").onclick = function(){
+        addname = document.getElementById("addname").value;
+        list.push(addname);
+        showlist(list);
+    }
+
+    //cari dalam list
+    document.getElementById("search").onclick = function(){
+        nameoffruit = document.getElementById("cari").value
+        count = 0;
+        for (listoffruit of list){
+            if (listoffruit == nameoffruit){
+                count += 1;
+            }
+        }
+        console.log(count);
+    }
+
+    document.getElementById("lokasi").onclick = function(){
+        nameinsearch = document.getElementById("letak").value;
+        console.log(list.indexOf(nameinsearch) + 1);
+        
+    }
+
+    document.getElementById
+</script>
