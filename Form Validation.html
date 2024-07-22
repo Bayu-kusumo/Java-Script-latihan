@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="SignUp" style="text-align: center;">
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <p>
+            <label for="">password</label>
+            <input type="password" id="password">
+        </p>
+        <p>
+            <label for="">confirm your password</label>
+            <input type="password" id="passwordConfirm">
+        </p>
+        <p>
+            <button id="confirm">Confirm</button>
+        </p>
+    </form>
+</body>
+</html>
+
+<script>
+    document.getElementById("confirm").onclick=function(){
+        password = document.getElementById("password").value;
+        passwordConfirm = document.getElementById("passwordConfirm").value;
+        email = document.getElementById("email").value;
+        signup(email);
+    }
+    function signup(email){
+        if (email!== ''){
+            check(password, passwordConfirm);
+        } else {
+            alert("please fill your email!");
+        }
+    }
+    function check (password, passwordConfirm){
+        if(password === passwordConfirm){
+            alert("Successfully Sign In")
+        } else if (password !== passwordConfirm){
+            alert("The password must be same!")
+        } else {
+            alert("Please make the password correctly!")
+        }
+        }
+</script>
